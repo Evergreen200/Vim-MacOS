@@ -14,6 +14,7 @@ set showcmd
 set tabstop=4 softtabstop=4
 set cmdheight=2
 set incsearch
+set encoding=utf-8
 
 call plug#begin('~/.vim/plugged')
  
