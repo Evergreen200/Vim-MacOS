@@ -1,4 +1,5 @@
 syntax on
+
 set hidden
 set noerrorbells
 set shiftwidth=4
@@ -17,22 +18,30 @@ set incsearch
 set encoding=utf-8
 
 call plug#begin('~/.vim/plugged')
- 
+
 Plug 'morhetz/gruvbox'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'preservim/nerdtree'
- 
+
 call plug#end()
- 
+
 colorscheme gruvbox
 set background=dark
 set colorcolumn=800
- 
+
 let g:syntastic_java_checkers=[]
 
 " Settings to open the nerdtree by default
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
- 
+
 " Ctrl and n to show the file menu (nerdtree)
 map <C-n> :NERDTreeToggle<CR>
+
+" Automatic bracket close
+ino " ""<left>
+ino ' ''<left>
+ino ( ()<left>
+ino [ []<left>
+ino { {}<left>
+ino {<CR> {<CR>}<ESC>0
